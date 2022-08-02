@@ -1,5 +1,6 @@
 package level5.task0514;
-import com.gmail.maxhard001.crypto.*; 
+
+import com.gmail.maxhard001.crypto.Secure;
 
 public class Solution
 {
@@ -16,7 +17,7 @@ public class Solution
     }
     public static void main(String[] args)
     {   
-    /*    Person person = new Person();
+        Person person = new Person();
         person.initialize("Muhamed", 30);
      
         System.out.println(person.name + " age: " + person.age);
@@ -24,7 +25,7 @@ public class Solution
         System.out.println(s);
         s = Secure.decryptMessage(s);
         System.out.println(s);
-    */
+    
  
         double amount = 1.00000005D;
         double avalue = 0.00000004D;
@@ -35,7 +36,7 @@ public class Solution
 
         System.out.println( "Цена только для вас " + 
                 - costForPrint.charAt(0) + getCurrencyName(costForPrint.charAt(1)));
-        int i = (int) 1.0 * 0.15;
+        double i = (int) 1.0 * 0.15;
         System.out.println(i);
     }
 
