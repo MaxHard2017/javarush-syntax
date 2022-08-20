@@ -1,15 +1,24 @@
 package level8.task0808;
-
+/*
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/* 
-10 тысяч удалений и вставок
-*/
+
 
 public class Solution {
+
+ * Для arrayList и linkedList провести 10 тысяч вставок, удалений, а также вызовов get и set.
+Требования:
+    •    Программа не должна выводить текст на экран.
+    •    Программа не должна считывать значения с клавиатуры.
+    •   Класс Solution должен содержать только 5 методов.
+    •    Метод insert10000(List list) должен вставлять 10 тысяч элементов в список.
+    •    Метод get10000(List list) должен вызывать 10 тысяч раз get у списка.
+    •    Метод set10000(List list) должен вызывать 10 тысяч раз set у списка.
+    •    Метод remove10000(List list) должен удалять 10 тысяч элементов из списка.
+
     public static void main(String[] args) {
         // ArrayList
         ArrayList arrayList = new ArrayList();
@@ -55,3 +64,4 @@ public class Solution {
     }
      
 }
+ */

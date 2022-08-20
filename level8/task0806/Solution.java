@@ -1,17 +1,12 @@
-package level8.task0806;
+/*package level8.task0806;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 
-/* 
-Коллекция Map из Object
-*/
-
-public class Solution {
-/*
- * Есть коллекция Map<String, Object> (реализация HashMap), туда занесли 10 различных пар объектов.
+ public class Solution {
+/* Есть коллекция Map<String, Object> (реализация HashMap), туда занесли 10 различных пар объектов.
 Вывести содержимое коллекции на экран, каждый элемент с новой строки.
 Пример вывода (тут показана только одна строка):
 Sim - 5
@@ -20,8 +15,8 @@ Sim - 5
     •    Программа не должна считывать значения с клавиатуры.
     •    Программа должна добавлять в коллекцию 10 различных объектов, согласно условию.
     •    Программа должна выводить содержимое коллекции на экран, каждую пару с новой строки.
- */
-    public static void main(String[] args) {
+*/
+/*    public static void main(String[] args) {
         Map<String, Object> map = new HashMap<>();
         map.put("Sim", 5);
         map.put("Tom", 5.5);
@@ -49,5 +44,6 @@ Sim - 5
             value = mapItem.getValue();
             System.out.println(key + " - " + value);
         }
-    }
+   }
 }
+*/
