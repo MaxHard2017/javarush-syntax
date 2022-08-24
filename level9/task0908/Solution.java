@@ -21,9 +21,4 @@ public class Solution {
             System.out.println("NullPointerException has been caught!!!");
         }
     }
-<<<<<<< HEAD
 }
-    
-=======
-}
->>>>>>> 561ba7f2dcb7767addf2bbc0ab2dd7222c324d6a
