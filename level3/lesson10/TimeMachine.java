@@ -1,4 +1,4 @@
-package Level3.lesson10;
+package level3.lesson10;
 
 public class TimeMachine
 {

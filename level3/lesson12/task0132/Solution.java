@@ -1,4 +1,4 @@
-package Level3.lesson12.task0132;
+package level3.lesson12.task0132;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
