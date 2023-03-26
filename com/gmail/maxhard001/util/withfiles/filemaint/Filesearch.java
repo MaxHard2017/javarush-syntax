@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import com.gmail.maxhard001.util.withfiles.vizit.FileContentVizit;
 
 public class Filesearch {
@@ -17,8 +18,8 @@ public class Filesearch {
         Path searchPath = Paths.get(args[0]);
         Path searchDublesResul = Path.of(args[1]);
 
-        Map<String, Path> allFiles = new HashMap<>();      // содержит список всех вайлов без дублей
-        Map<String, List<Path>> fileDubles = new HashMap<>();// искомый список дублей
+        Map<String, Path> allFiles = new HashMap<String, Path>();      // содержит список всех вайлов без дублей
+        Map<String, ArrayList<Path>> fileDubles = new HashMap<String, ArrayList<Path>>();// искомый список дублей
              
 
         FileContentVizit fc = new FileContentVizit(allFiles, fileDubles, searchDublesResul);
@@ -31,8 +32,9 @@ public class Filesearch {
         try (
             Writer out = new FileWriter(searchDublesResul.toFile(),
                                              StandardCharsets.UTF_8, false);
-        ) {   
-            for (Map.Entry<String, List<Path>> entry : fileDubles.entrySet()) {
+        ) { 
+            System.out.println("\n" + "Dubles" + "\n");  
+            for (Map.Entry<String, ArrayList<Path>> entry : fileDubles.entrySet()) {
                 for (Path dublicate  : entry.getValue()) {
                     out.write(dublicate.toString() + "\n");
                     System.out.println(dublicate.toString());

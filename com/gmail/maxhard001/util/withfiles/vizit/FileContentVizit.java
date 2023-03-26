@@ -5,6 +5,7 @@ import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +15,10 @@ import static java.nio.file.FileVisitResult.*;
 
 public class FileContentVizit extends SimpleFileVisitor<Path> {
     private Map<String, Path> fileInfo;      // содержит список всех вайлов без дублей
-    private Map<String, List<Path>> fileDubles; // содержит пути всех дублей
+    private Map<String, ArrayList<Path>> fileDubles; // содержит пути всех дублей
+    long i = 0; 
     public FileContentVizit(Map<String, Path> fileInfo, 
-                            Map<String, List<Path>> fileDubles,
+                            Map<String, ArrayList<Path>> fileDubles,
                             Path searchDublesResulPath){
         this.fileInfo = fileInfo;
         this.fileDubles = fileDubles;
@@ -25,18 +27,24 @@ public class FileContentVizit extends SimpleFileVisitor<Path> {
     @Override 
     public FileVisitResult visitFile(Path file, BasicFileAttributes attr){
         
-        Path dublFile;                                  // будет содержать путь к дублю файла, если обнаружится
+        Path dublFile = null;                                  // будет содержать путь к дублю файла, если обнаружится
         String key = FileHash.get(file);
+        System.out.print(i++ +  "...");
 
             // сохраняем файл в списке всех файлов (он без дублей)
             dublFile = fileInfo.put(key, file);       // выдаст предущий задублированный путь если такой key уже есть. перезаписываем новый путь
 
             if (dublFile != null){                       // dublFile не null если ключ повторился
+                ArrayList<Path> ar;
                 if (fileDubles.containsKey(key)) {         // добавляем путь в список дублированных
-                    fileDubles.get(key).add((Path)(file));  // добавляем путь файла в список путей дублей
+                    ar = fileDubles.get(key);
+                    ar.add((Path)file);  // добавляем путь файла в список путей дублей
                 } else {
-                    fileDubles.put(key, Arrays.asList(file, dublFile));   // добавляем оба пути если это первый дубль
-                }    
+                    ar = new ArrayList<Path>();
+                    ar.add(file);
+                    ar.add(dublFile);
+                    fileDubles.put(key, ar);         // добавляем оба пути если это первый дубль
+                }
             }
         return CONTINUE;
     }
