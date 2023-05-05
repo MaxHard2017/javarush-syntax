@@ -3,8 +3,12 @@ package com.gmail.maxhard001.doggame;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class Dog {
+    static final String CONSOLE_ENCODING = System.getProperty("console.encoding", "utf-8");
+    //кодировку ввода с консоли берем из console.encoding
+
     String name;
     boolean isCollarPutOn;
     boolean isLeashPutOn;
@@ -27,6 +31,7 @@ public class Dog {
         System.out.println("Одеваем ошейник...");
         this.isCollarPutOn = true;
     }
+    
 
     public void putLeash() {
         System.out.println("Одеваем поводок...");
@@ -50,47 +55,53 @@ public class Dog {
     }
 
     public void prepareDog(Dog dog) throws IOException {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in,"cp866"));
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in, CONSOLE_ENCODING));
         System.out.println("Напиши что надо надеть, а потом напиши \"Гулять\" и побежали !!!!");
         String sAction = read.readLine();
         while ((!sAction.equals("Гулять")) && (!sAction.equals("гулять"))) {
             switch (sAction) {
                 case ("ошейник"):
                     dog.putCollar();
-                break;
+                    break;
                 case ("Ошейник"):
                     dog.putCollar();
-                break;
-                case ("поводок") :
+                    break;
+                case ("поводок"):
                     dog.putLeash();
-                break;
-                case ("Поводок") :
+                    break;
+                case ("Поводок"):
                     dog.putLeash();
-                break;
-                case ("намордник") :
+                    break;
+                case ("намордник"):
                     dog.putMuzzle();
-                break;
-                case ("Намордник") :
+                    break;
+                case ("Намордник"):
                     dog.putMuzzle();
-                break;
-                default :
+                    break;
+                default:
                     System.out.println(sAction + " не подойдет :(. Надо что-то, что я смогу надеть :)");
-                break;
+                    break;
             }
-            
+
             sAction = read.readLine();
         }
     }
 
+    
     public static void main(String[] args) throws IOException {
         System.out.print("\033[H\033[2J");
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in,"cp866"));
+
+        // тестируем кодировку  file encoding: System.out, console - используем в System.in;
+        System.out.println("1 console input encoding: " + CONSOLE_ENCODING);
+        System.out.println("2 file encoding: " + System.getProperty("file.encoding"));
+        System.out.println("3 default charset: " + Charset.defaultCharset().toString());
+
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in, CONSOLE_ENCODING));
         System.out.println("Напиши имя собачки: ");
         String dogName = read.readLine();
         System.out.print("\033[H\033[2J");
         Dog dog = new Dog(dogName);
-        System.out.println("Xmm, надо что-то надеть... ");
-
+        System.out.println("Хмм, надо что-то надеть... ");
         
         while(!dog.ready) {
             
@@ -105,7 +116,6 @@ public class Dog {
                 + dog.isLeashPutOn + "\r\n - Намордник надет? " + dog.isMuzzlePutOn);
 
             }
-            
         }
     }
 }

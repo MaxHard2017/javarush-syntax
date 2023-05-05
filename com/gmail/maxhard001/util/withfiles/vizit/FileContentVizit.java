@@ -12,20 +12,22 @@ import java.util.Objects;
 
 import com.gmail.maxhard001.util.withfiles.hash.FileHash;
 import static java.nio.file.FileVisitResult.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class FileContentVizit extends SimpleFileVisitor<Path> {
+    static final Logger logger = LogManager.getLogger(FileContentVizit.class.getName());
     private Map<Long, ArrayList<Path>> fileLengthMap;      // содержит список всех вайлов без дублей
     private Map<String, List<Path>> fileHashDublesMap; // содержит пути всех дублей
-    private final String ALGORITM;
-     
+    private final String ALGORITM; 
     public FileContentVizit(Map<Long, ArrayList<Path>> fileLengthMap, 
                             Map<String, List<Path>> fileDubles,
                             String algoritm){
         this.fileLengthMap = fileLengthMap;
         this.fileHashDublesMap = fileDubles;
         this.ALGORITM = algoritm;
-
+        logger.error("File visitor initialized with {}", algoritm);
     }
     
     @Override 
@@ -97,6 +99,18 @@ public class FileContentVizit extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFileFailed(Path file, IOException exc) {
         System.err.println(exc);
+        return CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        // TODO Auto-generated method stub
+        return SKIP_SIBLINGS;
+    }
+
+    @Override
+    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+        // TODO Auto-generated method stub
         return CONTINUE;
     }
 }

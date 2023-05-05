@@ -12,8 +12,18 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.ArrayList;
 import com.gmail.maxhard001.util.withfiles.vizit.FileContentVizit;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
+// z
+
+
 
 public class Filesearch {
+
+    private static final org.apache.logging.log4j.Logger logger 
+    = org.apache.logging.log4j.LogManager.getLogger(Filesearch.class);
+
     /**
      * Map<Long, ArrayList<Path>> - содержит список всех длин (key) файлов (List<Path>)
      * для выявления одинаковых по длине файлов, которые теоретически могут быть одинаковыми
@@ -25,7 +35,11 @@ public class Filesearch {
      * 
      */
     public static void main(String[] args) {
+        //System.out.println(Filesearch.class.getName());
+        logger.trace("Entering application.");
+        logger.error("Didn't do it.");
         
+
         StringBuilder sb = new StringBuilder();
 
         //*** args check
@@ -58,7 +72,7 @@ public class Filesearch {
         Map<Long, ArrayList<Path>> fileLengthMap = new HashMap<>(); // длины файлов 
         Map<String, List<Path>> fileHashDublesMap = new HashMap<>(); // хэши и пути всех дублей
 
-        FileContentVizit fv = new FileContentVizit(fileLengthMap, fileHashDublesMap, "CRC32C");
+        FileContentVizit fv = new FileContentVizit(fileLengthMap, fileHashDublesMap, "MD5");
         try {
             Files.walkFileTree(searchPath, fv);
         } catch (IOException e) {
