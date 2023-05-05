@@ -35,8 +35,10 @@ import java.util.Map;
 */
 
 public class Solution {
+    static final String ENCODING = System.getProperty("console.encoding", "utf-8");
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, "cp866"));
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, ENCODING));
         HashMap<String, Integer> testMap = new HashMap<String, Integer>();
 
 /* Фу-фу реализация для того чтобы прошла валидатор :(

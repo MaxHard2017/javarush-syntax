@@ -1,4 +1,4 @@
-package Level4.tak0425;
+package level4.tak0425;
 
 import java.io.BufferedReader;
 import java.io.IOException;

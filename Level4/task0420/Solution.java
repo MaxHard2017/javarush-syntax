@@ -1,4 +1,4 @@
-package Level4.task0420;
+package level4.task0420;
 
 import java.io.BufferedReader;
 import java.io.IOException;

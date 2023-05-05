@@ -1,4 +1,4 @@
-package Level4.tasklogic;
+package level4.tasklogic;
 
 import com.gmail.maxhard001.binary.BinaryStr;
 import com.gmail.maxhard001.crypto.*;

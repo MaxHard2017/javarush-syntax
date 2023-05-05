@@ -1,4 +1,4 @@
-package Level4.task0421;
+package level4.task0421;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
