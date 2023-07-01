@@ -20,6 +20,7 @@ public class Passenger extends Man {
         newPassenger.setTicketExist(Boolean.parseBoolean(str));
         System.out.println(str);
         return newPassenger;
+        
     }
     
 
