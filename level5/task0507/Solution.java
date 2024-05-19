@@ -12,6 +12,7 @@ public class Solution
 {   
 public static double mean() throws Exception
 {
+    System.out.println("Вводить клавиатуры числа и вычислить среднее арифметическое. Завершить: -1");
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     int summ = 0;
     int iInputNum = 0;
@@ -28,9 +29,8 @@ public static double mean() throws Exception
 }
 
 
-
     public static void main(String[] args) throws Exception
     {
-        System.out.println(mean());
+        System.out.println("Среднее арифметичесоке: " + mean());
     }    
 }

@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 //import java.lang.reflect.Array;
 //import java.lang.reflect.GenericSignatureFormatError;
-
 public class Solution 
 //Напиши код метода sumDigitsInNumber(int number). Метод на вход принимает целое трехзначное число. 
 //Нужно посчитать сумму цифр этого числа, и вернуть эту сумму.

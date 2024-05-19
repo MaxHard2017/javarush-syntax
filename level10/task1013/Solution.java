@@ -20,6 +20,7 @@ public class Solution {
         private String address;
         private int age;
         private boolean sex;
+
         public Human(String name, String secondName, String middleName, String address, int age, boolean sex) {
             this.name = name;
             this.secondName = secondName;
@@ -28,6 +29,7 @@ public class Solution {
             this.age = age;
             this.sex = sex;
         }
+
         public Human(String name, String secondName, String middleName, String address, int age) {
             this.name = name;
             this.secondName = secondName;
@@ -36,6 +38,7 @@ public class Solution {
             this.age = age;
             this.sex = true;
         }
+
         public Human(String name, String secondName, String middleName, String address, boolean sex) {
             this.name = name;
             this.secondName = secondName;
@@ -44,6 +47,7 @@ public class Solution {
             this.age = 25;
             this.sex = sex;
         }
+
         public Human(String name, String secondName, String middleName, String address) {
             this.name = name;
             this.secondName = secondName;
@@ -52,7 +56,7 @@ public class Solution {
             this.age = 25;
             this.sex = true;
         }
-        
+
         public Human(String name, String secondName, String address, int age, boolean sex) {
             this.name = name;
             this.secondName = secondName;
@@ -61,6 +65,7 @@ public class Solution {
             this.age = age;
             this.sex = sex;
         }
+
         public Human(String name, String secondName, int age, boolean sex) {
             this.name = name;
             this.secondName = secondName;
@@ -69,6 +74,7 @@ public class Solution {
             this.age = age;
             this.sex = sex;
         }
+
         public Human(String name, String secondName, String address, boolean sex) {
             this.name = name;
             this.secondName = secondName;
@@ -77,6 +83,7 @@ public class Solution {
             this.age = 25;
             this.sex = sex;
         }
+
         public Human(String name, String secondName, String address, int age) {
             this.name = name;
             this.secondName = secondName;
@@ -85,6 +92,7 @@ public class Solution {
             this.age = age;
             this.sex = true;
         }
+
         public Human(String name, String secondName) {
             this.name = name;
             this.secondName = secondName;
@@ -93,6 +101,7 @@ public class Solution {
             this.age = 25;
             this.sex = true;
         }
+
         public Human() {
             this.name = "name";
             this.secondName = "secondName";
@@ -101,6 +110,23 @@ public class Solution {
             this.age = 25;
             this.sex = true;
         }
-             
+
+        @Override
+        public String toString() {
+            StringBuffer sb = new StringBuffer();
+            sb.append( super.toString() + "/n" );
+            sb.append( this.name + ";");
+            sb.append( this.middleName + ";" );
+            sb.append( this.secondName + ";" );
+            sb.append( this.address + ";" );
+            sb.append( this.age + ";" );
+            sb.append( this.sex + ";" );
+            return sb.toString();
+        }
+    }
+
+    public static void main(String[] args) {
+        Human ham = new Human("Мя", "ов", "ныч", "faraway", 100, false);
+        System.out.println(ham);
     }
 }

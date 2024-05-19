@@ -32,6 +32,7 @@ public class Solution {
     }
 
     public static int safeGetElement(ArrayList<Integer> list, int index, int defaultValue) {
+        //напишите тут ваш код
         int result = 0;
         try {
             result = list.get(index);
@@ -40,6 +41,5 @@ public class Solution {
             result = defaultValue;
         }
         return result;
-        //напишите тут ваш код
     }
 }
