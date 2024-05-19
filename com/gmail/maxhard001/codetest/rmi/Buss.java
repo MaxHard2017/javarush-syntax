@@ -18,7 +18,7 @@ public class Buss extends PassengerTransport {
     public void load() throws IOException {
         try {
             for ( int i = 0 ; i < MAX_PASSANGERS - passangers.size(); i++) {
-                passangers.add( Objects.requireNonNull(Passenger.getPassenger()) );
+                passangers.add(Objects.requireNonNull(Passenger.getPassenger()));
             }
         } catch (NullPointerException e) {
             System.out.println("Осторожно, двери звкрываются!" );
@@ -38,7 +38,7 @@ public class Buss extends PassengerTransport {
     @Override
     public void go() {
         if (this.getDriver() != null) {
-            System.out.println("Дававй, машинист " + this.getDriver().getName() + this.getName() + ", потихонечку трогай и песню свою не забудь!!!");
+            System.out.println("Дававй, машинист " + this.getDriver().getName() + " " + this.getName() + ", потихонечку трогай и песню свою не забудь!!!");
         } else {
             System.out.println("Водитель кобылы где-то курит...");
         }

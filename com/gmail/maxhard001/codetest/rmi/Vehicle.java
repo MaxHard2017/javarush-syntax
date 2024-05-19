@@ -14,7 +14,7 @@ public abstract class Vehicle {
             man = Man.getMan();
         }
         this.driver = man;
-        System.out.println("Водитель " + this.driver + " лезет за баранку");
+        System.out.println("Водитель " + this.driver.getName() + " лезет за баранку");
     }
     public void removeDriver() {
         this.driver = null;

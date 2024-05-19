@@ -4,6 +4,7 @@ package com.gmail.maxhard001.codetest.testInitialization;
 public class InitializationExample {
     public static void main(String[] args) {
         Child child = new Child();
+        System.out.println(child.toString());
     }
     static class Father {
         

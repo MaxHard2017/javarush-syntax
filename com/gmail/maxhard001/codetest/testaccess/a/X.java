@@ -5,7 +5,6 @@ public class X {
     public Integer y1;
     Integer y2;
     protected Integer y3;
-    private Integer y4;
     
     protected void printXX() {
         System.out.println("Ok!!!");
@@ -15,7 +14,6 @@ public class X {
         this.y1 = -1;
         this.y2 = -2;
         this.y3 = -3;
-        this.y4 = -4;
     }
 
     public static void setY0(Integer y0) {
@@ -34,11 +32,7 @@ public class X {
         this.y3 = y3;
     }
 
-    public X setY4(Integer y4) {
-        this.y4 = y4;
-        return this;
-    }
-
+    
     public class XX1 {
         int i = 1;
     }
