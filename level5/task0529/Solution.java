@@ -25,7 +25,7 @@ public class Solution {
         }
 
         public void inputNumber() throws IOException{                                     //метод читает инты с клавиатуры и сохраняет их сумму в переменной класса numberAccum
-            BufferedReader read = new BufferedReader(new InputStreamReader(System.in, "cp866"));
+            BufferedReader read = new BufferedReader(new InputStreamReader(System.in, "utf-8"));
             System.out.println("Enter the word \'сумма\'to stop reading keyboard ");
             System.out.println("Ints:");
             while (true){

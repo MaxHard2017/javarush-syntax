@@ -1,14 +1,12 @@
-package com.gmail.maxhard001.doggame;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 
 public class Dog {
-    static final String CONSOLE_ENCODING = System.getProperty("console.encoding", "utf-8");
+    static final String CONSOLE_ENCODING = System.getProperty("console.encoding", "cp866");
     //кодировку ввода с консоли берем из console.encoding
 
+    
     String name;
     boolean isCollarPutOn;
     boolean isLeashPutOn;
@@ -79,7 +77,7 @@ public class Dog {
                     dog.putMuzzle();
                     break;
                 default:
-                    System.out.println(sAction + " не подойдет :(. Надо что-то, что я смогу надеть :)");
+                    System.out.println(sAction + " не подойдет :( Надо что-то, что я смогу надеть :)");
                     break;
             }
 
@@ -92,10 +90,6 @@ public class Dog {
         System.out.print("\033[H\033[2J");
 
         // тестируем кодировку  file encoding: System.out, console - используем в System.in;
-        System.out.println("1 console input encoding: " + CONSOLE_ENCODING);
-        System.out.println("2 file encoding: " + System.getProperty("file.encoding"));
-        System.out.println("3 default charset: " + Charset.defaultCharset().toString());
-
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in, CONSOLE_ENCODING));
         System.out.println("Напиши имя собачки: ");
         String dogName = read.readLine();
